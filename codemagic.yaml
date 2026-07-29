@@ -5,6 +5,9 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Create platform folders
+        script: |
+          flutter create --platforms=android --project-name zanako --org com.zanako.app .
       - name: Get Flutter packages
         script: |
           flutter pub get
