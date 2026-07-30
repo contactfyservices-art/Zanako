@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../services/music_service.dart';
+import '../services/settings_service.dart';
 import '../utils/page_turn_route.dart';
 import 'home_menu_screen.dart';
 
@@ -13,7 +14,10 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
-  void initState() { super.initState(); MusicService.instance.startBackgroundMusic(); }
+  void initState() {
+    super.initState();
+    SettingsService.instance.load().then((_) => MusicService.instance.startBackgroundMusic());
+  }
 
   @override
   Widget build(BuildContext context) {
