@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../data/lessons_data.dart';
+import '../utils/page_turn_route.dart';
 import 'exercise_mode_select_screen.dart';
 
 class LevelSelectScreen extends StatelessWidget {
@@ -29,7 +30,7 @@ class LevelSelectScreen extends StatelessWidget {
                 itemBuilder: (context, i) {
                   final level = readingLevels[i];
                   return GestureDetector(
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ExerciseModeSelectScreen(level: level))),
+                    onTap: () => pushPage(context, ExerciseModeSelectScreen(level: level)),
                     child: Container(
                       decoration: BoxDecoration(color: _colors[i % _colors.length], borderRadius: BorderRadius.circular(14)),
                       child: Center(child: Text('${i + 1}', style: handwritingStyle(fontSize: 22, color: Colors.white))),
