@@ -6,6 +6,7 @@ import '../utils/page_turn_route.dart';
 import 'level_select_screen.dart';
 import 'game_screen.dart';
 import 'lessons_menu_screen.dart';
+import 'settings_screen.dart';
 
 class HomeMenuScreen extends StatefulWidget {
   const HomeMenuScreen({super.key});
@@ -39,6 +40,7 @@ class _HomeMenuScreenState extends State<HomeMenuScreen> {
                       Text(' ${ProgressService.instance.totalStars}  ', style: handwritingStyle(fontSize: 22)),
                       const Icon(Icons.bolt_rounded, color: AppColors.berryPink, size: 26),
                       Text(' ${ProgressService.instance.totalPoints}', style: handwritingStyle(fontSize: 22)),
+                      IconButton(icon: const Icon(Icons.settings_rounded, color: AppColors.deepBlue), onPressed: () => pushPage(context, const SettingsScreen())),
                     ]),
                   ],
                 ),
