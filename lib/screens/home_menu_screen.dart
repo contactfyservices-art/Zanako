@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../services/progress_service.dart';
+import '../utils/page_turn_route.dart';
 import 'level_select_screen.dart';
 import 'game_screen.dart';
 import 'lessons_menu_screen.dart';
@@ -43,13 +44,13 @@ class _HomeMenuScreenState extends State<HomeMenuScreen> {
                 ),
                 const SizedBox(height: 24),
                 _MenuCard(label: 'Leçons', subtitle: 'je découvre les lettres', icon: Icons.auto_stories_rounded, color: AppColors.leafGreen,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LessonsMenuScreen()))),
+                  onTap: () => pushPage(context, const LessonsMenuScreen())),
                 const SizedBox(height: 16),
                 _MenuCard(label: 'Exercices', subtitle: 'je m\'entraîne à lire', icon: Icons.menu_book_rounded, color: AppColors.skyBlue,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LevelSelectScreen()))),
+                  onTap: () => pushPage(context, const LevelSelectScreen())),
                 const SizedBox(height: 16),
                 _MenuCard(label: 'Jeux', subtitle: 'je m\'amuse', icon: Icons.sports_esports_rounded, color: AppColors.berryPink,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GameScreen()))),
+                  onTap: () => pushPage(context, const GameScreen())),
               ],
             ),
           ),
