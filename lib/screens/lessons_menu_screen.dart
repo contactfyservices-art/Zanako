@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../data/lessons_content.dart';
+import '../utils/page_turn_route.dart';
 import 'lesson_detail_screen.dart';
 
 class LessonsMenuScreen extends StatelessWidget {
@@ -28,7 +29,7 @@ class LessonsMenuScreen extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 14),
                     child: GestureDetector(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => LessonDetailScreen(lesson: l))),
+                      onTap: () => pushPage(context, LessonDetailScreen(lesson: l)),
                       child: Container(
                         padding: const EdgeInsets.all(18),
                         decoration: BoxDecoration(color: AppColors.leafGreen, borderRadius: BorderRadius.circular(20)),
