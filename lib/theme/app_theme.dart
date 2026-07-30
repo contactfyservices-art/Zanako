@@ -14,42 +14,19 @@ class AppColors {
   static const Color marginRed = Color(0xFFFF9AA2);
 }
 
-TextStyle handwritingStyle({
-  double fontSize = 28,
-  Color color = AppColors.inkBrown,
-  FontWeight fontWeight = FontWeight.w400,
-}) {
-  return GoogleFonts.schoolbell(
-    fontSize: fontSize,
-    color: color,
-    fontWeight: fontWeight,
-    height: 1.3,
-  );
+TextStyle handwritingStyle({double fontSize = 28, Color color = AppColors.inkBrown, FontWeight fontWeight = FontWeight.w400}) {
+  return GoogleFonts.petitFormalScript(fontSize: fontSize * 1.15, color: color, height: 1.4);
 }
 
-TextStyle handwritingBody({
-  double fontSize = 20,
-  Color color = AppColors.inkBrown,
-}) {
-  return GoogleFonts.patrickHand(
-    fontSize: fontSize,
-    color: color,
-    height: 1.4,
-  );
+TextStyle handwritingBody({double fontSize = 20, Color color = AppColors.inkBrown}) {
+  return GoogleFonts.petitFormalScript(fontSize: fontSize * 1.15, color: color, height: 1.5);
 }
 
 ThemeData buildZanakoTheme() {
   return ThemeData(
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.paperCream,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.skyBlue,
-      primary: AppColors.skyBlue,
-      secondary: AppColors.candyOrange,
-    ),
-    textTheme: TextTheme(
-      bodyMedium: handwritingBody(),
-      titleLarge: handwritingStyle(fontSize: 32),
-    ),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.skyBlue, primary: AppColors.skyBlue, secondary: AppColors.candyOrange),
+    textTheme: TextTheme(bodyMedium: handwritingBody(), titleLarge: handwritingStyle(fontSize: 32)),
   );
 }
