@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../data/lessons_data.dart';
+import '../utils/page_turn_route.dart';
 import 'exercise_screen.dart';
 import 'dictation_screen.dart';
 import 'guess_word_screen.dart';
@@ -18,11 +19,11 @@ class ExerciseModeSelectScreen extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text(level.title, style: handwritingStyle(fontSize: 32, color: AppColors.candyOrange)),
             const SizedBox(height: 30),
-            _ModeButton(label: 'Lecture', color: AppColors.skyBlue, onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ExerciseScreen(level: level)))),
+            _ModeButton(label: 'Lecture', color: AppColors.skyBlue, onTap: () => pushPage(context, ExerciseScreen(level: level))),
             const SizedBox(height: 16),
-            _ModeButton(label: 'Dictée', color: AppColors.leafGreen, onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => DictationScreen(level: level)))),
+            _ModeButton(label: 'Dictée', color: AppColors.leafGreen, onTap: () => pushPage(context, DictationScreen(level: level))),
             const SizedBox(height: 16),
-            _ModeButton(label: 'Deviner', color: AppColors.berryPink, onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => GuessWordScreen(level: level)))),
+            _ModeButton(label: 'Deviner', color: AppColors.berryPink, onTap: () => pushPage(context, GuessWordScreen(level: level))),
             const SizedBox(height: 30),
             TextButton(onPressed: () => Navigator.of(context).pop(), child: Text('retour', style: handwritingBody(fontSize: 18))),
           ]),
