@@ -15,11 +15,11 @@ class AppColors {
 }
 
 TextStyle handwritingStyle({double fontSize = 28, Color color = AppColors.inkBrown, FontWeight fontWeight = FontWeight.w400}) {
-  return GoogleFonts.petitFormalScript(fontSize: fontSize * 1.15, color: color, height: 1.4);
+  return GoogleFonts.playwriteFrTrad(fontSize: fontSize, color: color, fontWeight: FontWeight.w400, height: 1.5);
 }
 
 TextStyle handwritingBody({double fontSize = 20, Color color = AppColors.inkBrown}) {
-  return GoogleFonts.petitFormalScript(fontSize: fontSize * 1.15, color: color, height: 1.5);
+  return GoogleFonts.playwriteFrTrad(fontSize: fontSize, color: color, height: 1.6);
 }
 
 ThemeData buildZanakoTheme() {
