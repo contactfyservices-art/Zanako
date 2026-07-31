@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/notebook_background.dart';
 import '../services/settings_service.dart';
-import '../services/music_service.dart';
-import '../services/tts_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -14,7 +12,6 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    final s = SettingsService.instance;
     return Scaffold(
       body: NotebookBackground(
         child: SafeArea(
@@ -26,18 +23,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Text('Réglages', style: handwritingStyle(fontSize: 28)),
               ]),
               const SizedBox(height: 30),
-              Text('musique de fond : ${s.musicLevel}/10', style: handwritingBody(fontSize: 20)),
+              Text('musique de fond', style: handwritingBody(fontSize: 20, color: AppColors.deepBlue)),
               Slider(
-                value: s.musicLevel.toDouble(), min: 0, max: 10, divisions: 10,
-                activeColor: AppColors.skyBlue,
-                onChanged: (v) => setState(() { s.setMusicLevel(v.toInt()); MusicService.instance.applyVolume(v.toInt()); }),
+                value: SettingsService.instance.musicVolume.toDouble(),
+                min: 0, max: 10, divisions: 10,
+                label: '${SettingsService.instance.musicVolume}',
+                activeColor: AppColors.leafGreen,
+                onChanged: (v) => setState(() => SettingsService.instance.setMusicVolume(v.round())),
               ),
               const SizedBox(height: 20),
-              Text('voix (lecture des mots) : ${s.voiceLevel}/10', style: handwritingBody(fontSize: 20)),
+              Text('voix / prononciation', style: handwritingBody(fontSize: 20, color: AppColors.deepBlue)),
               Slider(
-                value: s.voiceLevel.toDouble(), min: 0, max: 10, divisions: 10,
+                value: SettingsService.instance.voiceVolume.toDouble(),
+                min: 0, max: 10, divisions: 10,
+                label: '${SettingsService.instance.voiceVolume}',
                 activeColor: AppColors.berryPink,
-                onChanged: (v) => setState(() { s.setVoiceLevel(v.toInt()); TtsService.instance.speak('bonjour'); }),
+                onChanged: (v) => setState(() => SettingsService.instance.setVoiceVolume(v.round())),
               ),
             ]),
           ),
