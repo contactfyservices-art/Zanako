@@ -26,7 +26,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Text('musique de fond', style: handwritingBody(fontSize: 20, color: AppColors.deepBlue)),
               Slider(
                 value: SettingsService.instance.musicVolume.toDouble(),
-                min: 0, max: 10, divisions: 10,
+                min: 0,
+                max: 10,
+                divisions: 10,
                 label: '${SettingsService.instance.musicVolume}',
                 activeColor: AppColors.leafGreen,
                 onChanged: (v) => setState(() => SettingsService.instance.setMusicVolume(v.round())),
@@ -35,7 +37,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Text('voix / prononciation', style: handwritingBody(fontSize: 20, color: AppColors.deepBlue)),
               Slider(
                 value: SettingsService.instance.voiceVolume.toDouble(),
-                min: 0, max: 10, divisions: 10,
+                min: 0,
+                max: 10,
+                divisions: 10,
                 label: '${SettingsService.instance.voiceVolume}',
                 activeColor: AppColors.berryPink,
                 onChanged: (v) => setState(() => SettingsService.instance.setVoiceVolume(v.round())),
