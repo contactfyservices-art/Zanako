@@ -16,7 +16,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     super.initState();
-    SettingsService.instance.load().then((_) => MusicService.instance.startBackgroundMusic());
+    SettingsService.instance.load();
+    MusicService.instance.startBackgroundMusic();
   }
 
   @override
