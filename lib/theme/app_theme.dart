@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const Color skyBlue = Color(0xFF2E9DF7);
@@ -15,11 +14,11 @@ class AppColors {
 }
 
 TextStyle handwritingStyle({double fontSize = 28, Color color = AppColors.inkBrown, FontWeight fontWeight = FontWeight.w400}) {
-  return GoogleFonts.playwriteFrTrad(fontSize: fontSize, color: color, fontWeight: FontWeight.w400, height: 1.5);
+  return TextStyle(fontFamily: 'PlaywriteFRTrad', fontSize: fontSize, color: color, fontWeight: fontWeight, height: 1.5);
 }
 
 TextStyle handwritingBody({double fontSize = 20, Color color = AppColors.inkBrown}) {
-  return GoogleFonts.playwriteFrTrad(fontSize: fontSize, color: color, height: 1.6);
+  return TextStyle(fontFamily: 'PlaywriteFRTrad', fontSize: fontSize, color: color, height: 1.6);
 }
 
 ThemeData buildZanakoTheme() {
