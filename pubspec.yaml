@@ -1,5 +1,5 @@
-name: zanako
-description: "Zanako - Application d'apprentissage de la lecture pour enfants"
+name: varecia_app
+description: Application mobile de l'Association Varecia
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -10,28 +10,34 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  flutter_tts: ^4.0.2
-  audioplayers: ^6.0.0
-  confetti: ^0.7.0
-  shared_preferences: ^2.2.3
+
+  # Backend
+  firebase_core: ^2.24.0
+  cloud_firestore: ^4.13.0
+
+  # State management
+  provider: ^6.1.1
+
+  # Persistance de session locale
+  shared_preferences: ^2.2.2
+
+  # UI
+  google_fonts: ^6.1.0
+  flutter_animate: ^4.3.0
+
+  # Fonctionnalités
+  image_picker: ^1.0.4
+  audioplayers: ^5.2.1
+  jitsi_meet_flutter_sdk: ^10.2.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
-    - assets/audio/
-  fonts:
-    - family: PlaywriteFRTrad
-      fonts:
-        - asset: assets/fonts/PlaywriteFRTrad.ttf
-
-flutter_launcher_icons:
-  android: true
-  ios: false
-  image_path: "assets/images/app_icon.png"
+    - assets/icons/
+    - assets/sounds/
